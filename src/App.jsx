@@ -4,6 +4,7 @@ import Total from './components/total/Total'
 import './App.css'
 
 function App() {
+
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
   const exercises1 = 10
@@ -11,12 +12,20 @@ function App() {
   const exercises2 = 7
   const part3 = 'State a component'
   const exercises3 = 14
+
+  const content = [
+	{part: part1,
+	exercise: exercises1},
+	{part: part2,
+	exercise: exercises2},
+	{part: part3,
+	exercise: exercises3}
+  ]
+  
   return (
     <div className="App">
       <Header course={course} />
-      <Content part={part1} exercises={exercises1} />
-      <Content part={part2} exercises={exercises2} />
-      <Content part={part3} exercises={exercises3} />
+      <Content contents={content} />
       <Total exercises={[exercises1, exercises2, exercises3]} />
     </div>
   )

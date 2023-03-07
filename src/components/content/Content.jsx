@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types'
+import PartContent from './part-content/PartContent'
 
-const Content = ({ part, exercises }) => {
-  return (
-    <p>
-      {part} {exercises}
-    </p>
-  )
+const Content = ({ contents }) => {
+  return contents?.map((content, idx) => (
+    <PartContent key={idx} exercise={content?.exercise} part={content?.part} />
+  ))
 }
 
 Content.propTypes = {
-  part: PropTypes.string.isRequired,
-  exercises: PropTypes.number.isRequired
+  contents: PropTypes.array
 }
 
 export default Content
